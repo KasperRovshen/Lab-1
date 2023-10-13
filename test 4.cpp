@@ -99,11 +99,8 @@ BMP rotateRight(BMP image) {
     for (int x = 0; x < Weight; x++) {
     for (int y = 0; y < Height; y++) {
         for (int channel = 0; channel < 3; channel++) {
-            // Calculate the new coordinates for the rotated pixel
-            int newX = y; // Reverse the order of y
-            int newY = Height - 1 - x; // Use the original x as new y
-            
-            // Copy the pixel data to the rotated image
+            int newX = y;
+            int newY = Height - 1 - x; 
             newImage.pixels[(newY * Weight * 3 + newX * 3) + channel] = image.pixels[(x * 3 + y * Weight * 3) + channel];
         }
     }
